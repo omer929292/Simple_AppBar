@@ -14,8 +14,7 @@ and the Flutter guide for
 
 ## AppBar
 
-Create an AppBar by setting height, color and child. This library helps to flexibly add items to the AppBar, enabling you to fully control their position within the AppBar.
-
+Create an AppBar by setting height, color and child. This library helps to flexibly add items to the AppBar as you are free to fully control their position within the AppBar.
 
 
 
