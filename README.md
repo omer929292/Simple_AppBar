@@ -12,37 +12,36 @@ and the Flutter guide for
 -->
 
 
-## Draw_Triangle
+## AppBar
 
-Draw a triangle by setting 2 sides and an angle. Set an offset (-1<x<1,-1<y<1) from which side a and side b are drawn.
+Create an AppBar by setting height, color and child. This library helps  to flexibly and freely add items to the AppBar, enabling you to fully control their position within the AppBar.
+
+
 
 
 ## Features
 
-* Draw a triangle by setting 2 sides and an angle
-* Set an offset to Control triangle's position
-* Rotate triangle
-* Set triangle's color
-* Set triangle's side width
-* Set triangle's side color
-* Get triangle's height
-* Get triangle's third side
-* Get triangle's area
+* Create an AppBar
+* Set AppBar's height
+* Set AppBar's color
+* Add items to the AppBar by using child property. Control their position within the AppBar using Stack, Row, etc...
+
 
 
 ## Usage
 
 ```
-Draw_Triangle(
-        angle_ab: 90,
-        a: 180,
-        b: 180,
-        color: Colors.blue,
-        sideWidth: 5,
-        sideColor: Colors.black,
-        rotate:45
-	offset:Offset(0,0)
-);
+SimpleAppBar(
+      color: Colors.purple,
+      height: 60,
+      child: Stack(
+        children: [
+              Align(alignment:Alignment(-0.8,0),child: Icon(Icons.monetization_on_outlined,size: 30,color: Colors.white,)),
+              Align(alignment:Alignment(0,0), child: Icon(Icons.favorite,size: 30,color: Colors.white,),),
+              Align(alignment:Alignment(0.8,0),child:Text("100",style:GoogleFonts.assistant(fontWeight:FontWeight.bold,fontSize: 17,color: Colors.white))),
+        ],
+      ),
+    );
 ```
 
 
@@ -54,19 +53,15 @@ Here are the accepted parameters :
 
 | Name  | Type | Default Value | Description | 
 | ------------- | ------------- | ------------- | ------------- | 
-| angle_ab  | double | null | Angle between side a and side b | 
-| a  | double | null | Length of side a |
-| b  | double | null | Length of side b | 
-| offset  | Offset | (0,0) | offset (-1<x<1,-1<y<1) from which a and b are drawn| 
-| rotate  | double | 0 | Triangle's rotation in degrees, from 0 to 360 | 
-| color  | Color | null | Triangle's inner color | 
-| sideColor  | Color | Colors.transparent | Triangle's side color | 
-| sideWidth  | double | 0 | Triangle's side width | 
+| color  | Color | Colors.green | AppBar's color | 
+| height  | double | 50 | AppBar's height |
+| child (Optional)  | Widget | null | AppBar's child of items | 
+
 
 
 ## example
 
-<img src="assets/asset.png" width="300" height="600">
+<img src="assets/asset.png" width="400" height="800">
 
 
 
