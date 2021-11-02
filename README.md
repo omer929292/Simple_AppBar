@@ -36,9 +36,9 @@ SimpleAppBar(
       height: 60,
       child: Stack(
         children: [
-              Align(alignment:Alignment(-0.8,0),child: Icon(Icons.monetization_on_outlined,size: 30,color: Colors.white,)),
-              Align(alignment:Alignment(0,0), child: Icon(Icons.favorite,size: 30,color: Colors.white,),),
-              Align(alignment:Alignment(0.8,0),child:Text("100",style:GoogleFonts.assistant(fontWeight:FontWeight.bold,fontSize: 17,color: Colors.white))),
+          Align(alignment:Alignment(-0.8,0),child: Icon(Icons.monetization_on_outlined,size: 30,color: Colors.white,)),
+          Align(alignment:Alignment(0,0), child: Icon(Icons.favorite,size: 30,color: Colors.white,),),
+          Align(alignment:Alignment(0.8,0),child:Text("100",style:TextStyle(fontSize: 20,color: Colors.white))),
         ],
       ),
     );
