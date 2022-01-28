@@ -23,6 +23,7 @@ Create an AppBar by setting height, color and child. This library helps to flexi
 * Create an AppBar
 * Set AppBar's height
 * Set AppBar's color
+* Set AppBar's border radius
 * Add items to the AppBar by using child property. Control their position within the AppBar using Stack, Row, etc...
 
 
@@ -54,6 +55,8 @@ Here are the accepted parameters :
 | ------------- | ------------- | ------------- | ------------- | 
 | color  | Color | Colors.green | AppBar's color | 
 | height  | double | 50 | AppBar's height |
+| bottom  | bool | false | Whether AppBar is top or bottom | 
+| borerRadius  | Widget | null | AppBar's border radius | 
 | child (Optional)  | Widget | null | AppBar's child of items | 
 
 
