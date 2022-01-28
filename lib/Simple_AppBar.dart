@@ -13,10 +13,18 @@ class SimpleAppBar extends StatefulWidget {
   //AppBar child of items (Optional).
   Widget? child;
 
+  //Whether AppBar is top or bottom
+  bool bottom;
+
+  //AppBar's border radius
+  double borderRadius;
+
   SimpleAppBar({
     this.color=Colors.green,
     this.height=50,
-    this.child
+    this.child,
+    this.bottom=false,
+    this.borderRadius=0
   });
 
   @override
@@ -37,17 +45,25 @@ class _SimpleAppBarState extends State<SimpleAppBar> {
     double ScreenWidth=MediaQuery.of(context).size.width; //constant
 
     //AppBar
-    return Container(
-      height:StatusBarHeight+AppBarHeight,
-      width:ScreenWidth,color: widget.color,
-      child: Align(
-      alignment: Alignment.bottomLeft,
+    return Align(
+      alignment: widget.bottom==false? Alignment.topCenter:Alignment.bottomCenter,
       child: Container(
-          height: AppBarHeight,
-          width: ScreenWidth,
-          child: widget.child
-      ),
-    ),);
+        decoration: BoxDecoration(
+            color: widget.color,
+            shape: BoxShape.rectangle,
+            borderRadius: widget.bottom==false? BorderRadius.only(bottomRight:Radius.circular(widget.borderRadius) ,bottomLeft:Radius.circular(widget.borderRadius)) : BorderRadius.only(topRight:Radius.circular(widget.borderRadius) ,topLeft:Radius.circular(widget.borderRadius))
+        ),
+        height:widget.bottom==false? StatusBarHeight+AppBarHeight:AppBarHeight,
+        width:ScreenWidth,
+        child: Align(
+          alignment: Alignment.bottomLeft,
+          child: Container(
+              height: AppBarHeight,
+              width: ScreenWidth,
+              child: widget.child
+          ),
+        ),),
+    );
   }
 
 
@@ -58,3 +74,4 @@ class _SimpleAppBarState extends State<SimpleAppBar> {
 
 
 }
+
